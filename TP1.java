@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 class TP1 {
@@ -55,14 +59,18 @@ class TP1 {
     }
 
     // Driver Code
-    public static void main(String[] args) {
-        int n = 4;
-        int[][] weights = new int[][] { 
-                { 0, 4,  8, 5 },
-                { 4, 0, 10, 7 },
-                { 8, 10, 0, 9 },
-                { 5,  7, 9, 0 } };
-        int k = 2;
+    public static void main(String[] args) throws FileNotFoundException {
+
+        String nomeArquivo = "pmed1.txt";
+
+        InputStreamReader irs = new InputStreamReader(new FileInputStream(nomeArquivo));
+
+        BufferedReader br = new BufferedReader(irs);
+
+        while(br.readLine() != null)
+        {
+            System.out.println();
+        }
 
         // Function Call
         selectKcities(n, weights, k);
