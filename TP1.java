@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
@@ -62,16 +63,18 @@ class TP1 {
     // Driver Code
     public static void main(String[] args) throws IOException {
 
-        String nomeArquivo = "pmed1.txt";
-
-        InputStreamReader irs = new InputStreamReader(new FileInputStream(nomeArquivo));
-
-        BufferedReader br = new BufferedReader(irs);
-
-        while(br.readLine() != null)
-        {
-            System.out.println(br);
+        Scanner in = new Scanner(new FileReader("pmed1.txt"));
+        int numArestas = 0;
+        String temp = "";
+        //numArestas = Integer.parseInt(in.nextLine());
+        temp = in.nextLine();
+        System.out.println(temp);
+        while (in.hasNextLine()) {
+            String line = in.nextLine();
+            //System.out.println(line);
         }
+
+
 
         // Function Call
         //selectKcities(n, weights, k);
